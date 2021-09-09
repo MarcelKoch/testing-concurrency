@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 concurrency:
+  if: ${{ github.ref != main }}
   group: ${{ github.workflow}}-${{ github.ref }}
   cancel-in-progress: true
 
